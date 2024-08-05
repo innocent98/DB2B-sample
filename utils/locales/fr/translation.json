@@ -1,0 +1,18 @@
+{
+  "welcome": "Bienvenue",
+  "goodbye": "Au revoir",
+  "chooseLanguage": "Veuillez choisir votre langue préférée pour continuer.",
+  "login": "Connectez-vous à votre compte",
+  "enterEmail": "Entrez votre adresse e-mail pour continuer",
+  "continue": "Continuer",
+  "empty_input": "Le champ ne peut pas être vide.",
+  "invalid_email": "Utilisateur avec cet e-mail non trouvé.",
+  "password_required": "Veuillez entrer un mot de passe",
+  "incorrect_password": "Mot de passe incorrect. Tentative restante",
+  "login_failed_attempts": "Vous avez été bloqué pour vous connecter, essayez de nouveau plus tard.",
+  "password_too_short": "Le mot de passe doit être au moins 8 caractères long",
+  "password_not_matching": "Les mots de passe ne correspondent pas",
+  "password_reset_success": "Réinitialisation du mot de passe réuss",
+  "what_can_we_do": "Que pouvons-nous faire pour vous?",
+  "logout": "Se déconnecter"
+}

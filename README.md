@@ -77,3 +77,13 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+# Multilingual support
+- The multilingual setup can be found in the utils folder. follow the instructions in the documentation(comments)
+
+# State management tools
+- The state management tools can be found in the redux folder. follow the instructions in the documentation(comments)
+
+- Also see the helpers folder for more information on how to utilize the api call methods. You need to import each function to make use of it.
+
+- I also created some reusable components for the Text, Input and Button components. Which you can call and use anytime you need them. Read up each of the file for proper utilization of the comments present there. Thank you.
