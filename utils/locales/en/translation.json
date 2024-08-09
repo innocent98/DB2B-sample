@@ -1,0 +1,18 @@
+{
+  "welcome": "Welcome",
+  "goodbye": "Goodbye",
+  "chooseLanguage": "Please choose your preferred language to continue",
+  "login": "Login to your account",
+  "enterEmail": "Enter your email to continue",
+  "continue": "Continue",
+  "empty_input": "Input cannot be empty",
+  "invalid_email": "User with email not found",
+  "password_required": "Please enter a password",
+  "incorrect_password": "Incorrect password. Attempt remaining",
+  "login_failed_attempts": "You have been blocked from logging in, try again later",
+  "password_too_short": "Password should be at least 8 characters long",
+  "password_not_matching": "Passwords do not match",
+  "password_reset_success": "Password reset successful. You can now login with your new password.",
+  "what_can_we_do": "What can we do for you?",
+  "logout": "Logout"
+}
