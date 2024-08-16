@@ -9,7 +9,7 @@ import {useNavigation} from '@react-navigation/native';
 import FocusedStatusBar from '../../components/FocusedStatusBar';
 import {useDispatch, useSelector} from 'react-redux';
 import {userLogin} from '../../redux/userRedux';
-import {updateLoginCount} from '../../redux/loginRedux';
+import {updateExpiresIn, updateLoginCount} from '../../redux/loginRedux';
 
 // Dummy user data for the purpose of this example. In a real-world app, you would fetch and validate this data.
 const data = {
@@ -19,7 +19,7 @@ const data = {
 };
 
 const LoginPassword = () => {
-  const {loginCount} = useSelector(state => state.loginAttempt);
+  const {loginCount, expiresIn} = useSelector(state => state.loginAttempt);
   const {t} = useTranslation();
   const navigation = useNavigation();
 
@@ -48,11 +48,31 @@ const LoginPassword = () => {
   };
 
   useEffect(() => {
+    const newTime = new Date();
+    const currentTime = newTime.getTime();
+
+    // console.log(expiresIn, currentTime);
+
+    if (expiresIn <= currentTime) {
+      dispatch(updateLoginCount(0));
+    }
+  }, [expiresIn]);
+
+  useEffect(() => {
+    const currentTime = new Date();
+    // console.log(loginCount);
+
     if (loginCount >= 1 && loginCount <= 2) {
       Alert.alert(`${t('incorrect_password')} ${3 - loginCount}`);
     }
 
     if (loginCount === 3) {
+      const expiration = currentTime.setHours(currentTime.getHours() + 3); // Adds 3 hours to the current time
+
+      if (expiresIn < currentTime.getTime()) {
+        dispatch(updateExpiresIn(expiration));
+      }
+
       Alert.alert(t('login_failed_attempts'));
       navigation.goBack();
     }

@@ -14,5 +14,6 @@
   "password_not_matching": "Les mots de passe ne correspondent pas",
   "password_reset_success": "Réinitialisation du mot de passe réuss",
   "what_can_we_do": "Que pouvons-nous faire pour vous?",
-  "logout": "Se déconnecter"
+  "logout": "Se déconnecter",
+  "items": "Aller aux articles"
 }

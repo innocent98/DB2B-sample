@@ -6,6 +6,7 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import userReducer from './userRedux';
 import langReducer from './langRedux';
 import loginReducer from './loginRedux';
+import cartReducer from './cartRedux';
 import {
   persistStore,
   persistReducer,
@@ -30,6 +31,8 @@ const rootReducer = combineReducers({
   user: userReducer,
   language: langReducer,
   loginAttempt: loginReducer,
+  cart: cartReducer,
+  // if you have other reducers, you can add them here as well.
   // if you have other reducers, you can add them here as well.
 });
 

@@ -9,6 +9,8 @@ import Login from './screens/authentication/Login';
 import LoginPassword from './screens/authentication/LoginPassword';
 import Welcome from './screens/Welcome';
 import {useSelector} from 'react-redux';
+import Items from './screens/Items';
+import CartItems from './screens/CartItems';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +29,8 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen name="Items" component={Items} />
+      <Stack.Screen name="CartItems" component={CartItems} />
       {/* add your other stack screens here */}
     </Stack.Navigator>
   );

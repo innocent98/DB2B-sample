@@ -14,5 +14,6 @@
   "password_not_matching": "Passwords do not match",
   "password_reset_success": "Password reset successful. You can now login with your new password.",
   "what_can_we_do": "What can we do for you?",
-  "logout": "Logout"
+  "logout": "Logout",
+  "items": "Go to items"
 }

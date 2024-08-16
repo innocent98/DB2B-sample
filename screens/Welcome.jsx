@@ -7,9 +7,12 @@ import CustomText from '../components/CustomText';
 import CustomButton from '../components/CustomButton';
 import {useDispatch, useSelector} from 'react-redux';
 import {logout} from '../redux/userRedux';
+import {useNavigation} from '@react-navigation/native';
 
 const Welcome = () => {
   const {currentUser} = useSelector(state => state.user);
+
+  const navigation = useNavigation();
 
   const {t} = useTranslation();
 
@@ -29,6 +32,10 @@ const Welcome = () => {
           <CustomText text={`${t('welcome')} ${currentUser?.name}`} />
           <CustomText text={`${t('what_can_we_do')}`} />
           <CustomButton buttonText={t('logout')} onPress={handleLogout} />
+          <CustomButton
+            buttonText={t('items')}
+            onPress={() => navigation.navigate('Items')}
+          />
         </View>
       </View>
     </SafeAreaView>
