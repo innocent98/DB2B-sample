@@ -3,6 +3,7 @@
 // if you have a large number of screens for better performance and code readability.
 
 import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import React from 'react';
 import LanguageSelect from './screens/LanguageSelect';
 import Login from './screens/authentication/Login';
@@ -13,6 +14,7 @@ import Items from './screens/Items';
 import CartItems from './screens/CartItems';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const AuthNavigator = () => {
   return (
@@ -36,6 +38,16 @@ const StackNavigator = () => {
   );
 };
 
+const DrawerNavigator = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={StackNavigator} />
+      <Drawer.Screen name="Items" component={Items} />
+      {/* add your other drawer screens here */}
+    </Drawer.Navigator>
+  );
+};
+
 const MainApp = () => {
   // get the user managed by the state management system here.
   const {currentUser} = useSelector(state => state.user);
@@ -47,7 +59,7 @@ const MainApp = () => {
     return <AuthNavigator />;
   }
 
-  return <StackNavigator />;
+  return <DrawerNavigator />;
 };
 
 export default MainApp;
