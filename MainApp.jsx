@@ -4,6 +4,7 @@
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import LanguageSelect from './screens/LanguageSelect';
 import Login from './screens/authentication/Login';
@@ -12,9 +13,12 @@ import Welcome from './screens/Welcome';
 import {useSelector} from 'react-redux';
 import Items from './screens/Items';
 import CartItems from './screens/CartItems';
+import Settings from './screens/Settings';
+import Search from './screens/Search';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
 const AuthNavigator = () => {
   return (
@@ -33,6 +37,7 @@ const StackNavigator = () => {
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Items" component={Items} />
       <Stack.Screen name="CartItems" component={CartItems} />
+      <Stack.Screen name="Search" component={Search} />
       {/* add your other stack screens here */}
     </Stack.Navigator>
   );
@@ -48,6 +53,16 @@ const DrawerNavigator = () => {
   );
 };
 
+const MyTabs = () => {
+  return (
+    <Tab.Navigator screenOptions={{headerShown: false}}>
+      <Tab.Screen name="Home" component={DrawerNavigator} />
+      <Tab.Screen name="Items" component={Items} />
+      <Tab.Screen name="Settings" component={Settings} />
+    </Tab.Navigator>
+  );
+};
+
 const MainApp = () => {
   // get the user managed by the state management system here.
   const {currentUser} = useSelector(state => state.user);
@@ -59,7 +74,7 @@ const MainApp = () => {
     return <AuthNavigator />;
   }
 
-  return <DrawerNavigator />;
+  return <MyTabs />;
 };
 
 export default MainApp;
